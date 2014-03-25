@@ -1,0 +1,13 @@
+%table.table.table-bordered.table-hover
+  %thead
+    %th Name
+    %th Date Of Joining
+    %th Mobile Number
+    %th email
+  %tbody
+    - faculties.each do |faculty|
+      %tr
+        %td= link_to faculty.name, faculty
+        %td= faculty.joining_date
+        %td= faculty.mobile_number
+        %td= faculty.user.try(:email)

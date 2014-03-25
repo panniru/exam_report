@@ -1,0 +1,26 @@
+!!!
+%html
+  %head
+    %title Online Exam
+  = stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true
+  = javascript_include_tag "application", media: "all", "data-turbolinks-track" => true
+  = csrf_meta_tags
+
+  %body
+    = render "shared/header"
+    .container
+      .row.row-offcanvas
+        - if user_signed_in?
+          .col-md-2.sidebar-offcanvas
+            = render "shared/navigation_list"
+          .col-xs-12.col-sm-9
+            %div
+              %section
+                - flash.each do |key, value|
+                  = content_tag(:div,value,:class => "#{flash_alert_class(key)}")
+              = render "shared/bread_crumb"
+            = yield
+        - else
+          .col-xs-6.col-sm-4.sidebar-offcanvas
+            = yield
+    = render "shared/footer"
