@@ -11,10 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140325092138) do
+ActiveRecord::Schema.define(version: 20140325130918) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "cces", force: true do |t|
+    t.float    "noofsas"
+    t.float    "profsas"
+    t.float    "nooffas"
+    t.float    "proffas"
+    t.integer  "year"
+    t.string   "pursuingclass"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "faculties", force: true do |t|
     t.string   "name"

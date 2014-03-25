@@ -1,0 +1,2 @@
+module CcesHelper
+end

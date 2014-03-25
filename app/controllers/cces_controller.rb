@@ -1,0 +1,2 @@
+class CcesController < ApplicationController
+end
